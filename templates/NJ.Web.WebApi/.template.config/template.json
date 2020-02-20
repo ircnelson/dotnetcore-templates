@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Nelson Junior",
+  "classifications": ["Web", "WebApi"],
+  "groupIdentity": "NJ.Web.WebApi",
+  "identity": "NJ.Web.WebApi.CSharp.3.1",
+  "name": "NJ Web Api",
+  "shortName": "njwebapi",
+  "sourceName": "NJ.Web",
+  "preferNameDirectory": true
+}
