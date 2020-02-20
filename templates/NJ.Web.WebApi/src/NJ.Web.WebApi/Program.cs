@@ -12,8 +12,9 @@ namespace NJ.Web.WebApi
             CreateHostBuilder(args).Build().Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+        public static IHostBuilder CreateHostBuilder(string[] args)
+        {
+            return Host.CreateDefaultBuilder(args)
                 .ConfigureLogging((context, builder) =>
                 {
                     Log.Logger = new LoggerConfiguration()
@@ -25,9 +26,7 @@ namespace NJ.Web.WebApi
                     builder
                         .AddSerilog(dispose: true);
                 })
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+                .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
+        }
     }
 }

@@ -22,16 +22,13 @@ namespace NJ.Web.WebApi
         }
 
         public void Configure(
-            IApplicationBuilder app, 
-            IWebHostEnvironment env, 
+            IApplicationBuilder app,
+            IWebHostEnvironment env,
             IHostApplicationLifetime hostApplicationLifetime)
         {
             hostApplicationLifetime.ApplicationStopped.Register(Log.CloseAndFlush);
-            
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+
+            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
 
             app.UseHttpsRedirection();
 
@@ -39,10 +36,7 @@ namespace NJ.Web.WebApi
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }
