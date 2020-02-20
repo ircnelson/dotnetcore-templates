@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Serilog;
 
 namespace NJ.Web.WebApi
 {
@@ -20,8 +21,13 @@ namespace NJ.Web.WebApi
             services.AddControllers();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(
+            IApplicationBuilder app, 
+            IWebHostEnvironment env, 
+            IHostApplicationLifetime hostApplicationLifetime)
         {
+            hostApplicationLifetime.ApplicationStopped.Register(Log.CloseAndFlush);
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
