@@ -7,5 +7,23 @@
   "name": "NJ Web Api",
   "shortName": "njwebapi",
   "sourceName": "NJ.Web",
-  "preferNameDirectory": true
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(ExcludeDocker)",
+          "exclude": [".dockerignore", "Dockerfile-Api"]
+        }
+      ]
+    }
+  ],
+  "symbols": {
+    "ExcludeDocker": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "Whether to exclude Docker in the generated template."
+    }
+  }
 }
