@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.1</PackageVersion>
+    <PackageVersion>1.2</PackageVersion>
     <PackageId>NJ.Templates</PackageId>
     <Title>NJ Templates</Title>
     <Authors>Nelson Junior</Authors>
